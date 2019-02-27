@@ -1,0 +1,17 @@
+<div class="bt1" *ngIf = "check">
+    <button (click)="onclickevent()">+</button>
+</div>
+<div *ngIf = "!check">
+    <div>
+        <ol>
+            <li *ngFor = "let task of userlist" >{{task}}
+                    <button (click)="oncanceltask(task)">cancel</button>
+                    <button (click)="onedittask(task)">edit</button>
+            </li>
+        </ol>
+    </div>
+    <input type = "text" [(ngModel)]="userName" placeholder="enter your task">
+    <button (click)="onAddTask()">add</button>
+    <button (click)="onclickevent()">cancel</button>
+</div>
+<router-outlet></router-outlet>
